@@ -15,7 +15,7 @@ ${message}`;
     model: "gemini-1.5-flash",
     contents: msg,
   });
-  console.log(response.text);
+
   res.json({success: true, data: response.text});
     } catch (error) {
         console.error("Error in chat:", error);
