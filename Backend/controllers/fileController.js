@@ -279,7 +279,7 @@ export const writefile = async (req, res) => {
 
 export const getNode = async (req, res) => {
   const { nodeId } = req.body;
-  console.log(nodeId);
+ 
   try {
     const node = await fileModel.findOne({ _id: nodeId });
     if (!node) {
