@@ -156,7 +156,7 @@ export const makeFile = async (req, res) => {
 
 
 export const deletefile = async (req, res) => {
-  console.log(req.body);
+ 
   try {
     const { nodeId, email } = req.body;
 
