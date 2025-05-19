@@ -22,7 +22,7 @@ export const getUserData = async(req, res)=>{
 }
 
 export const sendemail = async (req, res) => {
-    console.log("ok");
+   
     try{
 
         const form = req.body;
