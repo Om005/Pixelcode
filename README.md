@@ -180,9 +180,6 @@ pixelcode/
 └── README.md
 ```
 
----
-
----
 
 ## 💬 Feedback / Contact
 
