@@ -182,14 +182,6 @@ pixelcode/
 
 ---
 
-## 🧪 Demo Credentials (Optional for Testing)
-
-| Type | Email | Password |
-|------|-------|----------|
-| Demo User | testuser@example.com | password123 |
-
----
-
 ## 📜 License
 
 This project is licensed under the MIT License.
@@ -199,4 +191,4 @@ This project is licensed under the MIT License.
 ## 💬 Feedback / Contact
 
 Have suggestions or want to contribute?  
-Feel free to open an issue or email me at: `youremail@example.com`
+Feel free to open an issue or email me at: `chavdaom05@gmail.com`
