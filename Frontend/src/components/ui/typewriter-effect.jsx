@@ -8,7 +8,6 @@ export const TypewriterEffect = ({
   className,
   cursorClassName
 }) => {
-  // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
     return {
       ...word,

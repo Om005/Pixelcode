@@ -4,7 +4,6 @@ import userModel from '../models/userModel.js';
 import transporter from '../config/nodemailer.js';
 import { WECOME_EMAIL_TEMPLATE, VERIFY_EMAIL_TEMPLATE, RESET_PASSWORD_TEMPLATE } from '../config/emailTemplates.js';
 
-// import sendMail from '../config/nodemailer.js';
 export const register = async(req, res)=>{
     const {name, email, password} = req.body;
 
@@ -36,7 +35,6 @@ export const register = async(req, res)=>{
         }
         
         try {
-            // await sendMail(mailOptions)
             await transporter.sendMail(mailOptions)
         } catch (emailError) {
             console.error('Error sending email:', emailError);
@@ -102,7 +100,6 @@ export const sendVerifyOtp = async(req, res)=>{
     try{
         const {userId} = req.body;
         const user = await userModel.findById(userId);
-        // console.log(user)
         if(user.isAccountVerified){
             return res.json({success: false, message:"Account Already Verified."});
         }
@@ -115,13 +112,11 @@ export const sendVerifyOtp = async(req, res)=>{
             from: process.env.SENDER_EMAIL,
             to: user.email,
             subject: 'Accout Verification OTP',
-            // text: `Your OTP is ${otp}. Verify your account using this OTP.`
             html: VERIFY_EMAIL_TEMPLATE.replace("{{name}}", user.name).replace("{{otp}}", otp)
         }
         await transporter.sendMail(mailOptions);
         res.json({success:true, message: "Verification email sent on email."})
     } catch(error){
-        // console.log(error.message)
         res.json({success: false, message: error.message})
     }
 }
@@ -186,7 +181,6 @@ export const sendResetOtp = async(req, res)=>{
             from: process.env.SENDER_EMAIL,
             to: user.email,
             subject: 'Password Reset OTP',
-            // text: `Your OTP for resetting the password is ${otp}. Use this otp to proceed with resetting your password.`
             html: RESET_PASSWORD_TEMPLATE.replace("{{name}}", user.name).replace("{{otp}}", otp)
         }
         try{
@@ -236,7 +230,6 @@ export const resetPassword = async(req, res)=>{
     }
     try{
         const user = await userModel.findOne({email});
-        // console.log(user.name)
         if(!user){
             return res.json({success:false, message: "User not found."});  
         }

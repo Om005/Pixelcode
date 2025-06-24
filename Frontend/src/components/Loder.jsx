@@ -1,5 +1,4 @@
-import React, { use } from 'react';
-
+import React, { use } from "react";
 
 const Loder = () => {
   return (

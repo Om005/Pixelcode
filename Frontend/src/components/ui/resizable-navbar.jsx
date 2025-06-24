@@ -12,7 +12,7 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-// import { AppContent } from "../../context/AppContex";
+
 
 export const Navbar = ({
   children,
@@ -36,7 +36,6 @@ export const Navbar = ({
   return (
     <motion.div
       ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn("sticky inset-x-0 top-20 z-40 w-full", className)}>
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -236,7 +235,6 @@ export const NavbarLogo = () => {
         alt="logo"
         width={150}
          />
-      {/* <span className="font-medium text-white text-lg">PIXELCODE</span> */}
     </Link>
   );
 };
