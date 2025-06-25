@@ -177,10 +177,13 @@ pixelcode/
 │   └── .env              # Frontend env variables
 │
 ├── server/               # Express Backend
-│   ├── routes/
+│   ├── config/
 │   ├── controllers/
+│   ├── middlewares/
 │   ├── models/
+│   ├── routes/
 │   └── .env              # Backend env variables
+│   └── .server.js              
 │
 └── README.md
 ```
