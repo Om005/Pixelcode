@@ -3,7 +3,6 @@
 [![Portfolio](https://img.shields.io/badge/Visit-Portfolio-blue?style=for-the-badge)](https://www.om-chavda.me)
 
 # 🧠 PIXELCODE – Online Code IDE
-[🔗 Live Demo](https://pixelcode-nine.vercel.app) &nbsp;
 **PIXELCODE** is a powerful, feature-rich **online code IDE** built using **React.js** (frontend) and **Node.js with Express** (backend). It allows users to write, run, and manage code across multiple languages with support for theme customization, file systems, and an AI assistant named **Nebula**, powered by **Gemini 1.5 Flash**.
 
 ---
