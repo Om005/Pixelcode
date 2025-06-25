@@ -134,7 +134,7 @@ npm install
 ```bash
 npm start
 ```
-The backend will run on: `http://localhost:5000`
+The backend will run on: `http://localhost:4000`
 
 ---
 
