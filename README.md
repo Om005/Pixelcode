@@ -167,27 +167,6 @@ Powered by Gemini 1.5 Flash via `@google/genai`.
 
 ---
 
-## 📂 Folder Structure (Simplified)
-
-```
-pixelcode/
-├── client/               # React Frontend
-│   ├── public/
-│   ├── src/
-│   └── .env              # Frontend env variables
-│
-├── server/               # Express Backend
-│   ├── config/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   └── .env              # Backend env variables
-│   └── .server.js              
-│
-└── README.md
-```
-
 
 ## 💬 Feedback / Contact
 
