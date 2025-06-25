@@ -75,6 +75,7 @@
 **Frontend:**
 - React.js + Tailwind CSS
 - RapidAPI for code execution
+- Redux toolkit for state management
 - Gemini 1.5 Flash (AI)
 - Axios
 
