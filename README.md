@@ -118,18 +118,18 @@ WEB_API_KEY=your_web_api_key
 
 ### 📁 Clone the repository
 ```bash
-git clone https://github.com/your-username/pixelcode.git
+git clone https://github.com/Om005/Pixelcode.git
 cd pixelcode
 ```
 
 ### 1. 🖥️ Setup Backend
 
 ```bash
-cd server
+cd Backend
 npm install
 ```
 
-👉 Create a `.env` file inside the `server` directory with the required keys mentioned above.
+👉 Create a `.env` file inside the `Backend` directory with the required keys mentioned above.
 
 ```bash
 npm start
@@ -141,11 +141,11 @@ The backend will run on: `http://localhost:4000`
 ### 2. 💻 Setup Frontend
 
 ```bash
-cd ../client
+cd ../Frontend
 npm install
 ```
 
-👉 Create a `.env` file inside the `client` directory with required frontend keys.
+👉 Create a `.env` file inside the `Frontend` directory with required frontend keys.
 
 ```bash
 npm run dev
