@@ -1,6 +1,6 @@
 # 🚀 Quick Access
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://pixelcode-nine.vercel.app)
-[![Portfolio](https://img.shields.io/badge/Visit-Portfolio-blue?style=for-the-badge)](www.om-chavda.me)
+[![Portfolio](https://img.shields.io/badge/Visit-Portfolio-blue?style=for-the-badge)](https://www.om-chavda.me)
 
 # 🧠 PIXELCODE – Online Code IDE
 [🔗 Live Demo](https://pixelcode-nine.vercel.app) &nbsp;
