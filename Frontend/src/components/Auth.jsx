@@ -98,7 +98,7 @@ const Dashboard = () => {
     setsee(true);
     document.querySelector(".run").style.backgroundColor = "#4461BD";
     document.querySelector(".run").children[1].innerHTML = "Running...";
-    document.querySelector(".run").children[0].src = "./svgs/running.gif";
+    document.querySelector(".run").children[0].src = "../../public/svgs/running.gif";
     document.querySelector(".run").children[0].classList.remove("invert");
 
     document.querySelector(".op").classList.add("animate-pulse");
