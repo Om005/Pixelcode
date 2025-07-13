@@ -527,7 +527,7 @@ export default function IDE() {
                               onClick={async () => {
 
                                 if (
-                                  currfile._id === node._id ||
+                                  currfile?._id === node._id ||
                                   currfile?.path?.startsWith(node.path + "/")
                                 ) {
                                   dispatch(
@@ -642,7 +642,7 @@ export default function IDE() {
           dispatch(setCurrFile({ ...currfile, name: name, language: ext }));
           toast.success("File renamed successfully");
         } else {
-          const rsp = await dispatch(GetNode({ nodeId: currfile._id }));
+          const rsp = await dispatch(GetNode({ nodeId: currfile?._id }));
           dispatch(setCurrFile(rsp.payload.node));
           toast.success("Folder renamed successfully");
         }
@@ -988,7 +988,7 @@ export default function IDE() {
             <SidebarLink
               link={{
                 label: userData.name,
-                href: "",
+                href: null,
                 icon: (
                   <img
                     src="/svgs/user.svg"
