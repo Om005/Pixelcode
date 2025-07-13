@@ -81,17 +81,17 @@ const Dashboard = () => {
   };
 
   const handledownload = () => {
-    const blob = new Blob([currfile.content], {
-      type: languages[extoname[`${currfile.language}`]].type,
+    const blob = new Blob([currfile?.content], {
+      type: languages[extoname[`${currfile?.language}`]].type,
     });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = `code.${currfile.language}`;
+    link.download = `code.${currfile?.language}`;
     link.click();
   };
 
   const handlerun = async () => {
-    if (currfile.language == "txt") {
+    if (currfile?.language == "txt") {
       toast.error("A text file cannot be executed");
       return;
     }
@@ -114,12 +114,12 @@ const Dashboard = () => {
         "Content-Type": "application/json",
       },
       data: {
-        language: extoname[`${currfile.language}`],
+        language: extoname[`${currfile?.language}`],
         stdin: ip,
         files: [
           {
-            name: `index.${currfile.language}`,
-            content: currfile.content,
+            name: `index.${currfile?.language}`,
+            content: currfile?.content,
           },
         ],
       },
@@ -156,7 +156,7 @@ const Dashboard = () => {
         reader.onload = function (e) {
           const code = e.target.result;
           dispatch(setCurrFile({ ...currfile, content: code }));
-          dispatch(WriteFile({ nodeId: currfile._id, content: code }));
+          dispatch(WriteFile({ nodeId: currfile?._id, content: code }));
         };
         reader.readAsText(file);
       }
@@ -264,7 +264,7 @@ const Dashboard = () => {
       reader.onload = (event) => {
         dispatch(setCurrFile({ ...currfile, content: event.target.result }));
         dispatch(
-          WriteFile({ nodeId: currfile._id, content: event.target.result })
+          WriteFile({ nodeId: currfile?._id, content: event.target.result })
         );
       };
       reader.readAsText(file);
@@ -318,7 +318,7 @@ const Dashboard = () => {
             </Link>
 
             <select
-              value={extoname[`${currfile.language}`]}
+              value={extoname[`${currfile?.language}`]}
               disabled={true}
               className="w-[50%] montserrat px-3 py-3 bg-[#171717] text-white border rounded-lg focus:outline-none focus:border-blue-500"
             >
@@ -344,10 +344,10 @@ const Dashboard = () => {
               <button
                 onClick={() => {
                   const ok = {
-                    arg: currfile.content,
-                    fname: currfile.name,
+                    arg: currfile?.content,
+                    fname: currfile?.name,
                     isrefer: true,
-                    type: currfile.language,
+                    type: currfile?.language,
                   };
                   navigate("/chat", { state: ok });
                 }}
@@ -379,7 +379,7 @@ const Dashboard = () => {
                 <div className="flex items-center justify-between">
                   <p className="flex text-white nunito gap-2 justify-start items-center text-lg p-1 px-3">
                     <img src="/svgs/code.svg" className="w-5" alt="" />
-                    {currfile.name}
+                    {currfile?.name}
                   </p>
                   <div className="flex">
                     <div
@@ -458,16 +458,16 @@ const Dashboard = () => {
                                     ...currfile,
                                     content:
                                       languages[
-                                        extoname[`${currfile.language}`]
+                                        extoname[`${currfile?.language}`]
                                       ].boilerplate,
                                   })
                                 );
                                 dispatch(
                                   WriteFile({
-                                    nodeId: currfile._id,
+                                    nodeId: currfile?._id,
                                     content:
                                       languages[
-                                        extoname[`${currfile.language}`]
+                                        extoname[`${currfile?.language}`]
                                       ].boilerplate,
                                   })
                                 );
@@ -568,14 +568,14 @@ const Dashboard = () => {
                     </div>
                   )}
                   <Editor
-                    value={currfile.content}
+                    value={currfile?.content}
                     className="z-10"
                     onChange={(e) => {
                       dispatch(setCurrFile({ ...currfile, content: e }));
-                      dispatch(WriteFile({ nodeId: currfile._id, content: e }));
+                      dispatch(WriteFile({ nodeId: currfile?._id, content: e }));
                     }}
                     height="100%"
-                    language={extoname[`${currfile.language}`]}
+                    language={extoname[`${currfile?.language}`]}
                     theme="vs-dark"
                     options={{
                       wordWrap: wrap ? "on" : "off",
