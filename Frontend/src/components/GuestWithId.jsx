@@ -4,6 +4,7 @@ import axios from "axios";
 
 import toast, { Toaster } from "react-hot-toast";
 import Loder from "./Loder";
+import languages from "../constants/info.js"
 const GuestWithId = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const GuestWithId = () => {
         }
         sessionStorage.setItem("lang", response.data.file.lang);
         sessionStorage.setItem("code", response.data.file.code);
+        sessionStorage.setItem("ex", languages[response.data.file.lang].extension);
         const key = localStorage.getItem("key12390");
         if (key === null) {
           navigate("/guest", {
