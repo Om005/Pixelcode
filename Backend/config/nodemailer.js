@@ -1,21 +1,24 @@
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv'
+import sgMail from '@sendgrid/mail';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
-const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
+export const transporter = {
+    sendMail: async (mailOptions) => {
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        try {
+            await sgMail.send(mailOptions);
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
     },
-    tls: {
-        rejectUnauthorized: false
-    },
-    connectionTimeout: 20000,
-    greetingTimeout: 20000,
-    socketTimeout: 20000
-})
+};
 
-export default transporter
+export const verifyEmailTransporter = async () => {
+    try {
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+      console.log("SendGrid transporter verified successfully.✅");
+    } catch (error) {
+      console.error('Error verifying email transporter:', error);
+  }
+};

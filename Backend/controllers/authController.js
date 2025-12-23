@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import userModel from '../models/userModel.js';
-import transporter from '../config/nodemailer.js';
+import {transporter} from '../config/nodemailer.js';
 import { WECOME_EMAIL_TEMPLATE, VERIFY_EMAIL_TEMPLATE, RESET_PASSWORD_TEMPLATE } from '../config/emailTemplates.js';
 
 // import sendMail from '../config/nodemailer.js';
@@ -28,7 +28,7 @@ export const register = async(req, res)=>{
             maxAge: 7*24*60*60*1000
         })
         const mailOptions ={
-            from: process.env.SENDER_EMAIL,
+            from: process.env.SENDGRID_SENDER_EMAIL,
             to: email,
             subject: 'Welcome to this website',
             // text: `Welcome to this website. Your account has been created with email id: ${email}`
@@ -111,7 +111,7 @@ export const sendVerifyOtp = async(req, res)=>{
         await user.save();
         
         const mailOptions ={
-            from: process.env.SENDER_EMAIL,
+            from: process.env.SENDGRID_SENDER_EMAIL,
             to: user.email,
             subject: 'Accout Verification OTP',
             // text: `Your OTP is ${otp}. Verify your account using this OTP.`
@@ -182,7 +182,7 @@ export const sendResetOtp = async(req, res)=>{
         await user.save();
         
         const mailOptions ={
-            from: process.env.SENDER_EMAIL,
+            from: process.env.SENDGRID_SENDER_EMAIL,
             to: user.email,
             subject: 'Password Reset OTP',
             // text: `Your OTP for resetting the password is ${otp}. Use this otp to proceed with resetting your password.`
